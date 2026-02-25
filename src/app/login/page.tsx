@@ -43,13 +43,13 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-(--color-bg) px-4">
+    <div className="flex justify-center items-center bg-background px-4 min-h-screen">
       <Card className="w-full max-w-sm">
         <div className="mb-6 text-center">
-          <Link href="/" className="text-xl font-semibold text-gray-900">
+          <Link href="/" className="font-semibold text-gray-900 text-xl">
             Reparameya
           </Link>
-          <p className="mt-1 text-sm text-gray-500">Inicia sesión en tu cuenta</p>
+          <p className="mt-1 text-gray-500 text-sm">Inicia sesión en tu cuenta</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -73,8 +73,8 @@ export default function LoginPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <div className="flex items-center justify-between text-sm">
-            <label className="flex cursor-pointer items-center gap-2">
+          <div className="flex justify-between items-center text-sm">
+            <label className="flex items-center gap-2 cursor-pointer">
               <input
                 type="checkbox"
                 className="h-4 w-4 rounded border-gray-300 text-(--color-accent) focus:ring-(--color-accent)"
@@ -99,7 +99,7 @@ export default function LoginPage() {
           </Button>
         </form>
 
-        <p className="mt-6 text-center text-sm text-gray-500">
+        <p className="mt-6 text-gray-500 text-sm text-center">
           ¿Sin cuenta?{" "}
           <Link
             href="/registro"

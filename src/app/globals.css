@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --gradient-start: #f5f5f5;
+  --gradient-end: #e0e0e0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --gradient-start: #161616;
+    --gradient-end: #000000;
+  }
+}
+
+body {
+  background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+.custom-bg {
+  background-image: url('/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: right 0px top -600px;
+}
+
+.text-primary {
+  color: #00B66A !important;
+}
+.bg-primary {
+  background-color: #00B66A !important;
+}
+.border-primary {
+  border-color: #00B66A !important;
+}
+
+.text-secondary {
+  color: #313131 !important;
+}
+.bg-secondary {
+  background-color: #313131 !important;
+}
+.border-secondary {
+  border-color: #313131 !important;
+}
+
+.center-component {
+  text-align: -webkit-center;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #1F1F1F inset !important;
+  -webkit-text-fill-color: white !important;
+  caret-color: white;
+}

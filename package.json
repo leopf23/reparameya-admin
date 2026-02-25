@@ -6,15 +6,12 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint src --max-warnings 0"
   },
   "dependencies": {
-    "@headlessui/react": "^2.2.2",
-    "framer-motion": "^12.8.0",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "react-icons": "^5.5.0"
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

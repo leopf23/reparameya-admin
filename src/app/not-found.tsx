@@ -1,17 +1,15 @@
-"use client";
-import Image from "next/image";
-import Button from "@/component/atoms/button";
 import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col justify-center items-center px-4 min-h-screen text-center">
-      <Image src="/404-2.png" alt="404" width={520} height={80} priority />
-      <p className="my-5 mb-8 font-semibold text-white text-2xl">
-        Oops, no encontramos la página que buscas.
-      </p>
-      <Link href="/">
-        <Button label="Volver al inicio" />
+    <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-(--color-bg) px-4">
+      <h1 className="text-2xl font-semibold text-gray-900">404</h1>
+      <p className="text-gray-600">Página no encontrada.</p>
+      <Link
+        href="/"
+        className="text-sm font-medium text-(--color-accent) hover:underline"
+      >
+        Volver al inicio
       </Link>
     </div>
   );

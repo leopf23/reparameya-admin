@@ -14,17 +14,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Reparameya Admin",
-  description: "Reparameya Admin",
+  description: "Panel de administración",
 };
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="es" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>

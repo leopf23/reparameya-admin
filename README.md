@@ -1,47 +1,44 @@
 # Reparameya Admin
 
-Proyecto basado en la estructura de **kamaleon-strategy**: Next.js (App Router), Tailwind CSS v4, React 19, con layout público, login, registro, aula virtual, novedades y nosotros.
-
-## Inicio rápido
-
-```bash
-npm install
-npm run dev
-```
-
-Abre [http://localhost:3000](http://localhost:3000).
+Proyecto **ligero y limpio** en Next.js 16 con Tailwind CSS v4 y TypeScript. Estructura **Atomic Design**, sin dependencias extra.
 
 ## Estructura
 
-- `src/app/(layout)/` – Páginas con header y footer (home, nosotros, novedades, aula-virtual, detail-course)
-- `src/app/login` – Página de login (sin layout)
-- `src/app/registrarse` – Registro de usuario
-- `src/app/routers/menu.ts` – Rutas del menú de navegación
-- `src/component/atoms/` – Button, InputUi, InputSearch
-- `src/component/molecules/` – HeaderUi, Footer, BannerHome, InfoSection, CardBlog, CardCourse, Paginator, Accordion, FormRegister
+```
+src/
+├── app/
+│   ├── (main)/           # Rutas con layout (header + footer)
+│   │   ├── layout.tsx
+│   │   └── page.tsx      # /
+│   ├── login/
+│   │   └── page.tsx      # /login
+│   ├── layout.tsx
+│   ├── globals.css
+│   └── not-found.tsx
+└── components/
+    ├── atoms/            # Button, Input, Text
+    ├── molecules/        # InputField, Card
+    ├── organisms/        # Header, Footer
+    └── templates/       # MainLayout
+```
 
-## Assets
+## Comandos
 
-Coloca en `public/` los archivos que usa la app:
+```bash
+npm install
+npm run dev    # http://localhost:3000
+npm run build
+npm run lint
+```
 
-- `isoLogo.svg`, `logo.svg` – Logos
-- `background.svg`, `background.jpg`, `background-section.svg` – Fondos
-- `kamaleon01.png`, `kamaleon02.png`, `kamaleon03.png`, `kamaleon04.svg` – Imágenes de secciones
-- `vector-down.svg` – Decoración
-- `404-2.png` – Página 404
-- `profileCourse.jpg`, `profile.jpg` – Avatares
+## Login demo
 
-Puedes copiarlos desde el proyecto **kamaleon-strategy** en `public/` si los tienes allí.
-
-## Scripts
-
-- `npm run dev` – Desarrollo con Turbopack
-- `npm run build` – Build de producción
-- `npm run start` – Servidor de producción
-- `npm run lint` – Linter
+- **Usuario:** `admin` o `admin@reparameya.com`
+- **Contraseña:** `password`
 
 ## Tecnologías
 
-- Next.js 16, React 19
+- Next.js 16 (App Router)
+- React 19
 - Tailwind CSS v4
-- Framer Motion, Headless UI, React Icons
+- TypeScript

@@ -29,6 +29,7 @@ export const dashboardNav: NavSection[] = [
         href: "/tecnicos",
         icon: HiUserGroup,
         children: [
+          { label: "Todos", href: "/tecnicos/todos" },
           { label: "Pendientes", href: "/tecnicos/pendientes" },
           { label: "Bloqueados", href: "/tecnicos/bloqueados" },
         ],
@@ -48,6 +49,7 @@ export function getBreadcrumbs(pathname: string): string[] {
   const labels: Record<string, string> = {
     mapa: "Mapa",
     tecnicos: "Técnicos",
+    todos: "Todos",
     pendientes: "Pendientes",
     bloqueados: "Bloqueados",
     clientes: "Clientes",

@@ -57,6 +57,7 @@ export function getBreadcrumbs(pathname: string): string[] {
     facturas: "Facturas",
     beneficios: "Beneficios",
     pagos: "Pagos",
+    configuracion: "Configuración",
   };
   return segments.map((s) => labels[s] ?? s);
 }

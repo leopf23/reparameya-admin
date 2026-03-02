@@ -268,7 +268,7 @@ export default function TecnicosTodosPage() {
                         selectedChatId === chat.id ? "bg-blue-50" : ""
                       }`}
                     >
-                      <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#0048fdf6] text-(--color-accent) font-medium">
+                      <div className="flex justify-center items-center bg-[#0048fdf6] rounded-full size-10 font-medium text-[#ffffff] shrink-0">
                         {chat.name.slice(0, 2).toUpperCase()}
                       </div>
                       <div className="flex-1 min-w-0">

@@ -43,8 +43,13 @@ export const dashboardNav: NavSection[] = [
   },
 ];
 
-export function getBreadcrumbs(pathname: string): string[] {
-  if (pathname === "/") return ["Dashboards", "Dashboard"];
+export interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
+export function getBreadcrumbs(pathname: string): BreadcrumbItem[] {
+  if (pathname === "/") return [{ label: "Dashboards", href: "/" }, { label: "Dashboard", href: "/" }];
   const segments = pathname.split("/").filter(Boolean);
   const labels: Record<string, string> = {
     mapa: "Mapa",
@@ -59,5 +64,12 @@ export function getBreadcrumbs(pathname: string): string[] {
     pagos: "Pagos",
     configuracion: "Configuración",
   };
-  return segments.map((s) => labels[s] ?? s);
+  return segments.map((s, i) => {
+    const href = "/" + segments.slice(0, i + 1).join("/");
+    const label =
+      i === segments.length - 1 && i > 0 && segments[i - 1] === "ordenes" && /^\d+$/.test(s)
+        ? "Detalle de orden"
+        : labels[s] ?? s;
+    return { label, href };
+  });
 }

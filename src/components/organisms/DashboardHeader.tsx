@@ -58,23 +58,26 @@ export function DashboardHeader({ onMenuClick }: DashboardHeaderProps) {
             />
           </svg>
         </button>
-        <nav className="flex items-center gap-1.5 text-gray-600 text-sm">
+        <nav className="flex items-center gap-1.5 text-gray-600 text-sm" aria-label="Breadcrumb">
           {breadcrumbs.map((crumb, i) => (
-            <span key={crumb} className="flex items-center gap-1.5">
+            <span key={`${crumb.href}-${i}`} className="flex items-center gap-1.5">
               {i > 0 && (
                 <span className="text-gray-400" aria-hidden>
                   /
                 </span>
               )}
-              <span
-                className={
-                  i === breadcrumbs.length - 1
-                    ? "font-medium text-gray-900"
-                    : "hover:text-gray-900"
-                }
-              >
-                {crumb}
-              </span>
+              {i === breadcrumbs.length - 1 ? (
+                <span className="font-medium text-gray-900" aria-current="page">
+                  {crumb.label}
+                </span>
+              ) : (
+                <Link
+                  href={crumb.href}
+                  className="hover:text-gray-900 transition-colors"
+                >
+                  {crumb.label}
+                </Link>
+              )}
             </span>
           ))}
         </nav>

@@ -4,3 +4,5 @@ export { Card } from "./Card";
 export type { CardProps } from "./Card";
 export { Pagination } from "./Pagination";
 export type { PaginationProps } from "./Pagination";
+export { SidebarModal } from "./SidebarModal";
+export type { SidebarModalProps } from "./SidebarModal";
